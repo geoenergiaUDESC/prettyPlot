@@ -6,6 +6,7 @@ p = inputParser;
 % Axis parameters
 addParameter(p, 'horizontalCrop', false);
 addParameter(p, 'verticalCrop', true);
+addParameter(p, 'close', true);
 
 % Parse the input
 parse(p, varargin{:});
@@ -17,7 +18,9 @@ export_fig(sprintf(fileName), ...
     "-q101", ...
     "-a4", ...
     "-nocrop");
-close all;
+if p.Results.close == true
+    close all;
+end
 
 % Crop the figure if desired
 if p.Results.verticalCrop == true

@@ -326,22 +326,22 @@ end
 % Create ticks and labels
 LatexToggle = strcmp(Interpreter, 'latex');
 if isempty(XTicks)
-    [XTicks, XTickLabels, XExponentLabel] = createTicksAndLabels(XMin, XMax, double(NXTicks), XTickFormat, LatexToggle, UseXTickFractions, UseXScientificNotation);
+    [XTicks, XTickLabels, XExponentLabel] = createTicksAndLabels(XMin, XMax, double(NXTicks), XTickFormat, LatexToggle, UseXTickFractions, UseXScientificNotation, false);
 else
     [XTickLabels, XExponentLabel] = createLabels(XTicks, XTickFormat, LatexToggle, UseXTickFractions, UseXScientificNotation);
 end
 if isempty(YTicks)
-    [YTicks, YTickLabels, YExponentLabel] = createTicksAndLabels(YMin, YMax, double(NYTicks), YTickFormat, LatexToggle, UseYTickFractions, UseYScientificNotation);
+    [YTicks, YTickLabels, YExponentLabel] = createTicksAndLabels(YMin, YMax, double(NYTicks), YTickFormat, LatexToggle, UseYTickFractions, UseYScientificNotation, false);
 else
     [YTickLabels, YExponentLabel] = createLabels(YTicks, YTickFormat, LatexToggle, UseYTickFractions, UseYScientificNotation);
 end
 if isempty(ZTicks)
-    [ZTicks, ZTickLabels, ZExponentLabel] = createTicksAndLabels(ZMin, ZMax, double(NZTicks), ZTickFormat, LatexToggle, UseZTickFractions, UseZScientificNotation);
+    [ZTicks, ZTickLabels, ZExponentLabel] = createTicksAndLabels(ZMin, ZMax, double(NZTicks), ZTickFormat, LatexToggle, UseZTickFractions, UseZScientificNotation, false);
 else
     [ZTickLabels, ZExponentLabel] = createLabels(ZTicks, ZTickFormat, LatexToggle, UseZTickFractions, UseZScientificNotation);
 end
 if isempty(CBarTicks)
-    [CBarTicks, CBarTickLabels, CBarExponentLabel] = createTicksAndLabels(CBarMin, CBarMax, double(NCBarTicks), CBarTickFormat, LatexToggle, UseCBarTickFractions, UseCBarScientificNotation);
+    [CBarTicks, CBarTickLabels, CBarExponentLabel] = createTicksAndLabels(CBarMin, CBarMax, double(NCBarTicks), CBarTickFormat, LatexToggle, UseCBarTickFractions, UseCBarScientificNotation, false);
 else
     [YTickLabels, YExponentLabel] = createLabels(YTicks, YTickFormat, LatexToggle, UseYTickFractions, UseYScientificNotation);
 end

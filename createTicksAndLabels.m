@@ -6,16 +6,16 @@ function [tickVals, tickLabels, exponentLabel, subtickVals] = createTicksAndLabe
 [tickVals, subtickVals, ~] = ticksAndSubticks([Min Max], NTicks, logScale);
 
 % Get the mantissae and the exponents of the ticks
-[mantissae, exponents] = mantissaAndExponent(tickVals, logScale);
+[mantissae, exponents] = mantissaAndExponent(tickVals, logScale, UseScientificNotation);
 
-% Create the exponent label
-if UseScientificNotation == true
+% Create the tick labels - identical call for normal and scientific
+tickLabels = createLabel(mantissae, UseTickFractions, LatexToggle, TickFormat);
+
+% Create the exponent label for scientific notation
+if UseScientificNotation
     exponentLabel = strcat('$\times 10^{', string(exponents(end)), '}$');
 else
     exponentLabel = "";
 end
-
-% Create the tick labels
-tickLabels = createLabel(mantissae, UseTickFractions, LatexToggle, TickFormat);
 
 end
